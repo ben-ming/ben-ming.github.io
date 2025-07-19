@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="BenMing">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="[笔记]C++-J1A杂谈C++的起源1982年,美国贝尔实验室的本贾尼·斯特劳斯特卢普博士在C语言的基础上发明了C++. C++的应用C++在各行业领域应用颇多:操作系统开发、数字图像处理、办公软件开发、网络游戏开发…… 其他人与计算机之间依靠编程语言进行”沟通”. a、”a”与’a’都不相同,”a” &#x3D; ‘a’ + ‘\0’,而a则只可以作为变量名. ‘\0’是一个字符,表示字符串的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[笔记]C++-J1A">
+<meta property="og:url" content="http://example.com/1/index.html">
+<meta property="og:site_name" content="本明的小站">
+<meta property="og:description" content="[笔记]C++-J1A杂谈C++的起源1982年,美国贝尔实验室的本贾尼·斯特劳斯特卢普博士在C语言的基础上发明了C++. C++的应用C++在各行业领域应用颇多:操作系统开发、数字图像处理、办公软件开发、网络游戏开发…… 其他人与计算机之间依靠编程语言进行”沟通”. a、”a”与’a’都不相同,”a” &#x3D; ‘a’ + ‘\0’,而a则只可以作为变量名. ‘\0’是一个字符,表示字符串的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-19T11:49:32.000Z">
+<meta property="article:modified_time" content="2025-07-19T14:25:43.898Z">
+<meta property="article:author" content="BenMing">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>[笔记]C++-J1A - 本明的小站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="/css/cloudedGlass.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":"ben-ming.github.io"}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>本明的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="[笔记]C++-J1A"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-19 19:49" pubdate>
+          2025年7月19日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          642 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">[笔记]C++-J1A</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="笔记-C-J1A"><a href="#笔记-C-J1A" class="headerlink" title="[笔记]C++-J1A"></a>[笔记]C++-J1A</h1><h2 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h2><h4 id="C-的起源"><a href="#C-的起源" class="headerlink" title="C++的起源"></a>C++的起源</h4><p>1982年,美国贝尔实验室的<strong>本贾尼·斯特劳斯特卢普博士</strong>在<strong>C语言的基础</strong>上发明了C++.</p>
+<h4 id="C-的应用"><a href="#C-的应用" class="headerlink" title="C++的应用"></a>C++的应用</h4><p>C++在<strong>各行业领域应用</strong>颇多:操作系统开发、数字图像处理、办公软件开发、网络游戏开发……</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>人与计算机之间依靠<strong>编程语言</strong>进行”沟通”.</p>
+<p>a、”a”与’a’都<strong>不相同</strong>,”a” &#x3D; ‘a’ + ‘\0’,而a则只可以作为<strong>变量名</strong>.</p>
+<p>‘\0’是一个<strong>字符</strong>,表示字符串的<strong>结束符</strong>.</p>
+<p>如果不主动换行，cout输出的内容默认不换行.</p>
+<h2 id="基础框架"><a href="#基础框架" class="headerlink" title="基础框架"></a>基础框架</h2><p>在C++中,代码需要包含基础框架,否则编译时会报错,由此可见框架是C++的基础.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//C++基础框架:</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span><span class="hljs-comment">//引入头文件.</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;头文件&gt;</span><span class="hljs-comment">//可以写多行以导入多个头文件.</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<span class="hljs-comment">//使用标准命名空间.</span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><span class="hljs-comment">//主函数起点(入口).</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//在此处写代码内容.</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//主函数终点(出口).</span><br>&#125;<span class="hljs-comment">//主函数的范围在&#123;&#125;之间.</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>一个程序<strong>有且仅有一个主函数</strong>.</p>
+</blockquote>
+<h2 id="词汇总结与用法"><a href="#词汇总结与用法" class="headerlink" title="词汇总结与用法"></a>词汇总结与用法</h2><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center">含义</th>
+<th align="center">音标</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">include</td>
+<td align="center">包含,包括</td>
+<td align="center">&#x2F;ɪnˈkluːd&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">input</td>
+<td align="center">输出</td>
+<td align="center">&#x2F;ˈɪn.pʊt&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">output</td>
+<td align="center">输入</td>
+<td align="center">&#x2F;ˈaʊt.pʊt&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">io</td>
+<td align="center">输入,输出</td>
+<td align="center">&#x2F;ˈaɪ ˈəʊ&#x2F;</td>
+<td align="center">input与output的缩写</td>
+</tr>
+<tr>
+<td align="center">stream</td>
+<td align="center">河流(数据流)</td>
+<td align="center">&#x2F;striːm&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">using</td>
+<td align="center">使用</td>
+<td align="center">&#x2F;ˈjuː.zɪŋ&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">space</td>
+<td align="center">空间</td>
+<td align="center">&#x2F;speɪs&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">std</td>
+<td align="center">标准的</td>
+<td align="center">&#x2F;stɪd&#x2F;</td>
+<td align="center">standard(&#x2F;ˈstændəd&#x2F;)的缩写</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">整数</td>
+<td align="center">&#x2F;ɪnt&#x2F;</td>
+<td align="center">integer(&#x2F;ˈɪntɪdʒə(r)&#x2F;)的缩写</td>
+</tr>
+<tr>
+<td align="center">main</td>
+<td align="center">主要的</td>
+<td align="center">&#x2F;meɪn&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">return</td>
+<td align="center">返回</td>
+<td align="center">&#x2F;rɪˈtɜːn&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">iostream</td>
+<td align="center">输入输出数据流</td>
+<td align="center">&#x2F;iˈəʊstrɪm&#x2F;</td>
+<td align="center">input与output的缩写和stream的组合</td>
+</tr>
+<tr>
+<td align="center">namespace</td>
+<td align="center">命名空间</td>
+<td align="center">&#x2F;ˈneɪm.spेɪs&#x2F;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">cout</td>
+<td align="center">输出</td>
+<td align="center">&#x2F;ˈsiː aʊt&#x2F;</td>
+<td align="center">c(C语言)与out(出去)的组合</td>
+</tr>
+<tr>
+<td align="center">endl</td>
+<td align="center">换行符</td>
+<td align="center">&#x2F;ˈɛndəl&#x2F;</td>
+<td align="center">end与line的缩写，用于换行，使用cout输出</td>
+</tr>
+</tbody></table>
+<p><em>注:音标皆为英式音标.</em></p>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><h5 id="cout-输出"><a href="#cout-输出" class="headerlink" title="cout(输出)"></a>cout(输出)</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//cout的用法</span><br>cout &lt;&lt; <span class="hljs-string">&quot;字符串&quot;</span>;<br>cout &lt;&lt; <span class="hljs-string">&#x27;字符&#x27;</span>;<br>cout &lt;&lt; 数字、数学运算或变量  &lt;&lt; endl;<br><span class="hljs-comment">//&quot;cout&quot;为对象名(输出),&quot;&lt;&lt;&quot;为连接符,&quot;;&quot;为结束符号,双引号内原样输出(包括空格),输出endl表示换行,可以多项输出,也可以输出算术表达式的结果.</span><br><span class="hljs-comment">//cout用法事例</span><br>代码:cout &lt;&lt; <span class="hljs-string">&quot;hello&quot;</span> &lt;&lt;<span class="hljs-string">&quot;   &quot;</span> &lt;&lt; <span class="hljs-number">1</span><span class="hljs-number">+1</span> &lt;&lt; endl &lt;&lt; <span class="hljs-string">&#x27;a&#x27;</span><br>结果:hello   <span class="hljs-number">2</span><br>    a<br><br>    <br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[!CAUTION]</p>
+<p>C++编程中一切使用<strong>英文</strong>符号.</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/C/" class="category-chain-item">C++</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  <!--可嵌入代码-->
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>
