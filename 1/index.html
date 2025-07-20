@@ -27,7 +27,7 @@
 <meta property="og:description" content="[笔记]C++-J1A杂谈C++的起源1982年,美国贝尔实验室的本贾尼·斯特劳斯特卢普博士在C语言的基础上发明了C++. C++的应用C++在各行业领域应用颇多:操作系统开发、数字图像处理、办公软件开发、网络游戏开发…… 其他人与计算机之间依靠编程语言进行”沟通”. a、”a”与’a’都不相同,”a” &#x3D; ‘a’ + ‘\0’,而a则只可以作为变量名. ‘\0’是一个字符,表示字符串的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-19T11:49:32.000Z">
-<meta property="article:modified_time" content="2025-07-19T14:25:43.898Z">
+<meta property="article:modified_time" content="2025-07-20T10:25:55.886Z">
 <meta property="article:author" content="BenMing">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          642 字
+          791 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          6 分钟
+          7 分钟
         
       </span>
     
@@ -285,11 +285,10 @@
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>人与计算机之间依靠<strong>编程语言</strong>进行”沟通”.</p>
 <p>a、”a”与’a’都<strong>不相同</strong>,”a” &#x3D; ‘a’ + ‘\0’,而a则只可以作为<strong>变量名</strong>.</p>
 <p>‘\0’是一个<strong>字符</strong>,表示字符串的<strong>结束符</strong>.</p>
-<p>如果不主动换行，cout输出的内容默认不换行.</p>
 <h2 id="基础框架"><a href="#基础框架" class="headerlink" title="基础框架"></a>基础框架</h2><p>在C++中,代码需要包含基础框架,否则编译时会报错,由此可见框架是C++的基础.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//C++基础框架:</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span><span class="hljs-comment">//引入头文件.</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;头文件&gt;</span><span class="hljs-comment">//可以写多行以导入多个头文件.</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<span class="hljs-comment">//使用标准命名空间.</span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><span class="hljs-comment">//主函数起点(入口).</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//在此处写代码内容.</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//主函数终点(出口).</span><br>&#125;<span class="hljs-comment">//主函数的范围在&#123;&#125;之间.</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//C++基础框架:</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span><span class="hljs-comment">//引入头文件.</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;头文件&gt;</span><span class="hljs-comment">//可以写多行以导入多个头文件.</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<span class="hljs-comment">//使用标准命名空间.</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><span class="hljs-comment">//主函数起点(入口).</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//在此处写代码内容.</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//主函数终点(出口).</span><br>&#125;<span class="hljs-comment">//主函数的范围在&#123;&#125;之间.</span><br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>[!CAUTION]</p>
+<p>[!IMPORTANT]</p>
 <p>一个程序<strong>有且仅有一个主函数</strong>.</p>
 </blockquote>
 <h2 id="词汇总结与用法"><a href="#词汇总结与用法" class="headerlink" title="词汇总结与用法"></a>词汇总结与用法</h2><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><table>
@@ -393,11 +392,49 @@
 </tr>
 </tbody></table>
 <p><em>注:音标皆为英式音标.</em></p>
-<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><h5 id="cout-输出"><a href="#cout-输出" class="headerlink" title="cout(输出)"></a>cout(输出)</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//cout的用法</span><br>cout &lt;&lt; <span class="hljs-string">&quot;字符串&quot;</span>;<br>cout &lt;&lt; <span class="hljs-string">&#x27;字符&#x27;</span>;<br>cout &lt;&lt; 数字、数学运算或变量  &lt;&lt; endl;<br><span class="hljs-comment">//&quot;cout&quot;为对象名(输出),&quot;&lt;&lt;&quot;为连接符,&quot;;&quot;为结束符号,双引号内原样输出(包括空格),输出endl表示换行,可以多项输出,也可以输出算术表达式的结果.</span><br><span class="hljs-comment">//cout用法事例</span><br>代码:cout &lt;&lt; <span class="hljs-string">&quot;hello&quot;</span> &lt;&lt;<span class="hljs-string">&quot;   &quot;</span> &lt;&lt; <span class="hljs-number">1</span><span class="hljs-number">+1</span> &lt;&lt; endl &lt;&lt; <span class="hljs-string">&#x27;a&#x27;</span><br>结果:hello   <span class="hljs-number">2</span><br>    a<br><br>    <br></code></pre></td></tr></table></figure>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><h5 id="cout-输出"><a href="#cout-输出" class="headerlink" title="cout(输出)"></a>cout(输出)</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//cout的用法</span><br>cout&lt;&lt;<span class="hljs-string">&quot;字符串&quot;</span>;<br>cout&lt;&lt;<span class="hljs-string">&#x27;字符&#x27;</span>;<br>cout&lt;&lt;数字、数学运算或变量&lt;&lt;endl;<br><span class="hljs-comment">//&quot;cout&quot;为对象名(输出),&quot;&lt;&lt;&quot;为连接符,&quot;;&quot;为结束符号,双引号内原样输出(包括空格),输出endl表示换行,可以多项输出,也可以输出算术表达式的结果.</span><br><span class="hljs-comment">//cout用法事例</span><br>代码:cout&lt;&lt;<span class="hljs-string">&quot;hello&quot;</span>&lt;&lt;<span class="hljs-string">&quot;   &quot;</span>&lt;&lt;<span class="hljs-number">1</span><span class="hljs-number">+1</span>&lt;&lt;endl&lt;&lt;<span class="hljs-string">&#x27;a&#x27;</span>;<br>结果:hello   <span class="hljs-number">2</span><br>    a<br><br>    <br></code></pre></td></tr></table></figure>
 
 <blockquote>
-<p>[!CAUTION]</p>
-<p>C++编程中一切使用<strong>英文</strong>符号.</p>
+<p>[!NOTE]</p>
+<p>1.C++编程中一切使用<strong>英文</strong>符号.</p>
+<p>2.如果不主动换行，cout输出的内容默认不换行.</p>
+</blockquote>
+<h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">加法</th>
+<th align="center">减法</th>
+<th align="center">乘法</th>
+<th align="center">除法</th>
+<th align="center">取余</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数学中</td>
+<td align="center">+</td>
+<td align="center">-</td>
+<td align="center">×</td>
+<td align="center">÷</td>
+<td align="center">mod</td>
+</tr>
+<tr>
+<td align="center">C++中</td>
+<td align="center">+</td>
+<td align="center">-</td>
+<td align="center">*</td>
+<td align="center">&#x2F;</td>
+<td align="center">%</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p>1.取得<strong>整除法余数</strong>的操作,简称<strong>取余</strong>.</p>
+<p>2.在C++中的取余运算符号为”%”.</p>
+<p>3.a%b或a&#x2F;b,b≠0.</p>
+<p>4.不能有<strong>小数</strong>参与取余运算.</p>
+<p>5.除法中,<strong>任意一方</strong>为小数，运算结果为<strong>小数</strong>(为0不显示,但仍为<strong>小数</strong>);当<strong>两方都为整数</strong>时，运算结果为<strong>整数</strong>(<strong>不会四舍五入</strong>,直接<strong>截去小数部分</strong>).</p>
+<p>6.C++中算数运算符<strong>适用</strong>于数学中的四则运算规则.</p>
 </blockquote>
 
                 
