@@ -1,3 +1,3 @@
-http://example.com/1/
-http://example.com/
-http://example.com/categories/C/
+https://ben-ming.github.io/1/
+https://ben-ming.github.io/
+https://ben-ming.github.io/categories/C/
